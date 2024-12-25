@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-control {
+        border-radius: 0;
+        box-shadow: none;
+        border-color: #ced4da;
+    }</style>
+
+<section class="logins py-5">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="title-section mb-md-5 mb-4">
+            <h6 class="w3ls-title-sub"></h6>
+            <h3 class="w3ls-title text-uppercase text-dark font-weight-bold">Register for Blood Donation</h3>
+        </div>
+        <hr/>
+        <div class="login px-sm-12" style="width:100%">
+			<form action="" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				
+				<div class="form-group">
+					<label>Do you have any health issues?</label>
+					<textarea class="form-control" name="health_issues" rows="3"></textarea>
+				</div>
+				
+				<div class="form-group">
+					<label>Blood Level</label>
+					<input type="text" class="form-control" name="blood_level">
+				</div>
+				
+				<div class="form-group">
+					<label>Place</label>
+					<textarea class="form-control" name="place" rows="3"></textarea>
+				</div>
+				
+				<div class="form-group">
+					<label>Blood Group</label>
+					<input type="text" class="form-control" name="blood_group">
+				</div>
+				
+				<button type="submit" class="btn btn-danger">Submit Donation</button>
+			</form>
+		</div>
+	</div>
+</section>
+<a href="/user">Back to User Board</a>  
+        
+{% endblock %}
+

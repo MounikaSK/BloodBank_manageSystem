@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTPOK(2000)</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .message {
+    text-align: center;
+  }
+  .message h2 {
+    font-weight: bold;
+    color: #333;}
+    </style>
+</head>
+<body>
+
+    <form action="reg">
+        <section class="logins py-5">
+           <div class="container py-xl-5 py-lg-3">
+               <div class="title-section mb-md-5 mb-4">
+                   <h6 class="w3ls-title-sub"></h6>
+                 
+                   <div class="message">
+                    <h2>Registration Successful</h2>
+                    </div>
+               </div>
+               <a href="/login">Back to Login Page</a>   
+
+               {% endblock %}   
+            </form>       
+    
+    
+</body>   
+    

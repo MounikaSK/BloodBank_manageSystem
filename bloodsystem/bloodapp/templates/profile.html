@@ -1,0 +1,80 @@
+
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+<style>
+    .div1 {
+        color: green;
+    }
+    .div2 {
+        color: red;
+    }
+</style>
+<div class="container" style="width:60%;margin-top:8%;margin-bottom:5%;background:white;border-radius:2%;border:1px solid grey">
+    <h2 style="font-weight:bold;font-family : 'Monotype Corsiva' ; color : #E6120E ;margin-top:2%" align="center">My Detail</h2>
+
+    {% if pro %}
+        <div align="left" class="container-fluid" style="width:100%;margin-bottom:5%">
+
+            <hr>
+            <div class="row">
+                <div class="col-md-6 div2">
+                    <strong>Full Name:</strong>
+                </div>
+                <div class="col-md-6 div1">
+                    {{ pro.fname }} {{ pro.lname }}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 div2">
+                    <strong>Email Id :</strong>
+                </div>
+                <div class="col-md-6 div1">
+                    {{ pro.email }}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 div2">
+                    <strong>Date of Birth :</strong>
+                </div>
+                <div class="col-md-6 div1">
+                    {{ pro.dob }}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 div2">
+                    <strong>Contact :</strong>
+                </div>
+                <div class="col-md-6 div1">
+                    {{ pro.contact }}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 div2">
+                    <strong>Address :</strong>
+                </div>
+                <div class="col-md-6 div1">
+                    {{ pro.add }}
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6 div2">
+                    <strong>Blood Group :</strong>
+                </div>
+                <div class="col-md-6 div1">
+                    {{ pro.bloodgroup }}
+                </div>
+            </div>
+            <hr>
+        </div>
+    {% else %}
+        <p>{{ error }}</p>
+    {% endif %}
+<a href="/user">Back to User Board</a>  
+</div>
+{% endblock %}

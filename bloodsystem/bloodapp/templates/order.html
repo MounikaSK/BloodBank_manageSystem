@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container-fluid" style="width:90%;margin-top:8%">
+                    <div class="container-fluid">
+                        <h1 align="center" style="font-weight:bold;font-family : 'Monotype Corsiva' ; color : #E6120E ;margin-top:4%">View  Orders</h1>
+                         </div><hr>
+                                <table id="example" class="display" style="width:100%">
+                                  <thead>
+                                    <tr>
+                                      <th>S.no</th>
+                                      <th>Order Id</th>
+                                      <th>User Id</th>
+                                      <th>Full Name</th>
+                                      <th>Email</th>
+                                      <th>Contact</th>
+                                      <th>Blood Group</th>
+                                      <th>Quantity</th>
+                                     
+                                      
+                                      
+                                      
+
+                                  </tr>
+                              </thead>
+                              <tbody>
+                              {% for i in data %}
+                                <tr>
+                                  <td>{{forloop.counter}}</td>
+                                  <td>{{i.id}}</td>
+                                  <td>{{i.user.id}}</td>
+                                  <td>{{i.user.fname}} {{i.user.lname}}</td>
+                                  <td>{{i.user.email}}</td>
+                                  <td>{{i.user.contact}}</td>
+                                  <td>{{i.blood_group}}</td>
+                                  <td>{{i.quantity}}</td>
+                                  <td>
+                                        
+                                  </td>
+                                    
+
+                                    
+                              {% endfor %}
+                              <a href="admin_home">Back to Admin Dashboard</a>
+                          </tbody>
+                      </table>
+                  </div>
+
+{% endblock %}

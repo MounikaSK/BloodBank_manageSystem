@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container-fluid" style="width:90%;margin-top:8%">
+                    <div class="container-fluid">
+                        <h1 align="center" style="font-weight:bold;font-family : 'Monotype Corsiva' ; color : #E6120E ;margin-top:4%">View User</h1>
+                         </div><hr>
+                                <table id="example" class="display" style="width:100%">
+                                  <thead>
+                                    <tr>
+                                      <th>#</th>
+                                      <th>Full Name</th>
+                                      <th>Email</th>
+                                      <th>Contact</th>
+                                      <th>Address</th>
+                                      <th>Blood Group</th>
+                                      
+
+                                  </tr>
+                              </thead>
+                              <tbody>
+                              {% for i in d %}
+                                <tr>
+                                  <td>{{forloop.counter}}</td>
+                                  <td>{{i.fname}} {{i.lname}}</td>
+                                  <td>{{i.email}}</td>
+                                  <td>{{i.contact}}</td>
+                                  <td>{{i.add}}</td>
+                                  <td>{{i.bloodgroup}}</td>
+                                  
+
+                                    
+                                  
+                              </tr>
+                              {% endfor %}
+                          </tbody>
+                          <a href="admin_home">Back to Admin Dashboard</a>
+                      </table>
+                  </div>
+ 
+{% endblock %}
